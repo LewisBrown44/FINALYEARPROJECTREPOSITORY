@@ -84,25 +84,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'itapps.wsgi.application'
 
-DATABASES = { 
-
-    'default': { 
-
-        'ENGINE': 'django.db.backends.mysql', 
-
-        'NAME': os.environ['AZURE_DB_NAME'], 
-
-        'HOST': os.environ['AZURE_DB_HOST'], 
-
-        'PORT': os.environ['AZURE_DB_PORT'], 
-
-        'USER': os.environ['AZURE_DB_USER'], 
-
-        'PASSWORD': os.environ['AZURE_DB_PASSWORD'], 
-
-    } 
-
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "HOST": os.getenv("AZURE_DB_HOST"),
+        "NAME": os.getenv("AZURE_DB_NAME"),
+        "USER": os.getenv("AZURE_DB_USER"),
+        "PASSWORD": os.getenv("AZURE_DB_PASSWORD"),
+        "PORT": os.getenv("AZURE_DB_PORT"),
+        "OPTIONS": {
+            "ssl": {"ssl_ca": "/etc/ssl/certs/ca-certificates.crt"}
+        }
+    }
 }
+
 
 
 
