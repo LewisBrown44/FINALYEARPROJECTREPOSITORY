@@ -1,0 +1,8 @@
+accessVirt/
+venv/
+env/
+__pycache__/
+*.pyc
+accessVirt/
+__pycache__/
+*.pyc
