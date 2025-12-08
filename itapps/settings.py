@@ -192,3 +192,5 @@ print("AZURE_DB_USER:", os.environ.get('AZURE_DB_USER'))
 print("AZURE_SA_NAME:", os.environ.get('AZURE_SA_NAME'))
 print("AZURE_SA_KEY:", os.environ.get('AZURE_SA_KEY'))  # Only for local debugging
 
+
+
