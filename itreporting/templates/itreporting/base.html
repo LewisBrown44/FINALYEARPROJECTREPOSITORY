@@ -26,11 +26,9 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
-                        <!-- <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
-                        <a class="nav-item nav-link" href="#">Report</a> -->
-                       <!--<a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a> -->
+                        <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
+                       <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
                        <a class="nav-item nav-link" href="{% url 'itreporting:report' %}">Report</a>
-                    </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
