@@ -7,22 +7,28 @@
 <h1>Welcome to SHU Contact</h1>
 
 <div>
-    <section class="contact-form">
+
+    
+    <section class="content-section">
         <h2>Contact Us</h2>
         <p>If you have any questions or queries, please fill out this form below.</p>
 
         <form class="contact-form" action="mailto:your@email.com" method="post" enctype="text/plain">
+
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <div> <input type="text" name="name" maxlength="150" class="textinput form-control" id="id_name" required> </div>
 
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" required>
 
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
+            <label for="name">Email</label>
+            <div> <input type="text" name="email" maxlength="150" class="textinput form-control" id="email" required> </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <label for="name">Subject</label>
+            <div> <input type="text" name="subject" maxlength="150" class="textinput form-control" id="email" required> </div>
+
+
+            <label for="name">Message</label>
+            <div> <textarea name="message" rows="5" maxlength="150" class="textinput form-control" id="message" required></textarea> </div>
 
             <button type="submit">Send Message</button>
         </form>
