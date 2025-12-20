@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class Issue(models.Model):
     type = models.CharField(max_length=100, choices=[('Hardware', 'Hardware'), ('Software', 'Software')])
+    course = models.CharField(max_length=100, default='No Course')
     room = models.CharField(max_length=100)
     urgent = models.BooleanField(default=False)
     details = models.TextField()
