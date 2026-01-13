@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+from users.models import Profile
+
 
 class Issue(models.Model):
     course = models.CharField(max_length=100, default='No Course', choices=[('Cyber Security', 'Cyber Security'), ('Smart Computing', 'Smart Computing'), ('Computer Science', 'Computer Science')])
@@ -19,5 +21,12 @@ class Issue(models.Model):
     def get_absolute_url(self):
         return reverse('itreporting:issue-detail', kwargs={'pk': self.pk})
         
-    
+class Registration(models.Model):   
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='registrations')
+    issue = models.ForeignKey(Issue, on_delete=models.CASCADE, related_name='registrations')
+    date_registered = models.DateTimeField(auto_now_add=True)
+   
+    class Meta:
+        unique_together = ['profile', 'issue']
+        ordering = ['-date_registered']
     
