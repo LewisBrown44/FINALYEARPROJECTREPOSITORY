@@ -4,7 +4,7 @@
 {% block content %}
 
 
-    <h1>View IT Courses</h1>
+    <h1>View Modules</h1>
     {% for issue in issues %}
         <article class="media content-section">
         <img class="rounded-circle article-img" src="{{ issue.author.profile.image.url }}"/>
@@ -13,7 +13,7 @@
                     <a class="mr-2" href="#">{{ issue.author.profile }}</a>
                     <small class="text-muted">{{ issue.date_submitted }}</small>
                 </div>
-                <h2><a class="article-title" href="{% url 'itreporting:issue-detail' issue.id %}">{{ issue.course }}</a></h2>
+                <h2><a class="article-title" href="{% url 'itreporting:issue-detail' issue.id %}">{{ issue.module }}</a></h2>
                 <p class="article-content">Room : {{ issue.room }}</p>
                 <p class="article-content">Details : {{ issue.details }}</p>
             </div>

@@ -3,14 +3,16 @@
  
 {% block content %}
 
-    <h1>IT Courses</h1>
+    <h1>Modules</h1>
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="#">{{ object.author.profile }}</a>
                     <small class="text-muted">{{ object.date_submitted }}</small>
                 </div>
-                <h2 class="article-title">{{ object.course    }}</h2>
+                <h2 class="article-title">{{ object.module    }}</h2>
+
+                <p class="article-content">Course : {{ object.course }}</p>
                 <p class="article-content">Room : {{ object.room }}</p>
                 <p class="article-content">Details : {{ object.details }}</p>
                         {% if object.author == user %}

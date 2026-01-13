@@ -28,12 +28,12 @@
                         <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
                        <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
-                       <a class="nav-item nav-link" href="{% url 'itreporting:report' %}">Report</a>
+                       <a class="nav-item nav-link" href="{% url 'itreporting:report' %}">Modules</a>
                     <!-- Navbar Right Side -->
 
                    <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" href="{% url 'itreporting:issue-create' %}">Create New Course</a>  
+                            <a class="nav-item nav-link" href="{% url 'itreporting:issue-create' %}">Create New Module</a>  
                             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                             <form method="post" id="frm_logout" action="{% url 'logout' %}" style="display:inline;">
                                 {% csrf_token %}

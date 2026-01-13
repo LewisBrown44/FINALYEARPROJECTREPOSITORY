@@ -26,7 +26,7 @@ def report(request):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Issue
-    fields = ['course', 'room', 'details']
+    fields = ['module', 'course', 'room', 'details']
     template_name = 'itreporting/issue_form.html'
     
     def form_valid(self, form):
@@ -49,7 +49,7 @@ class PostDetailView(DetailView):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView): 
     model = Issue
-    fields = ['course', 'room', 'details']
+    fields = ['module', 'course', 'room', 'details']
 
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
