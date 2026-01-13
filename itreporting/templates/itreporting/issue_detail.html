@@ -13,8 +13,13 @@
                 <h2 class="article-title">{{ object.module    }}</h2>
 
                 <p class="article-content">Course : {{ object.course }}</p>
-                <p class="article-content">Room : {{ object.room }}</p>
-                <p class="article-content">Details : {{ object.details }}</p>
+                <p class="article-content">Code : {{ object.code }}</p>
+                <p class="article-content">Credit : {{ object.credit }}</p>
+                <p class="article-content">Category : {{ object.category }}</p>
+                <p class="article-content">Availability : {{ object.availability }}</p>
+                <p class="article-content">Courses Allowed To Register : {{ object.courses_allowed_to_register }}</p>
+                <p class="article-content">Description : {{ object.description }}</p>
+                
                         {% if object.author == user %}
 
                             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'itreporting:issue-update' object.id %}">Update</a>

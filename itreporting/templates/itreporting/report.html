@@ -14,8 +14,13 @@
                     <small class="text-muted">{{ issue.date_submitted }}</small>
                 </div>
                 <h2><a class="article-title" href="{% url 'itreporting:issue-detail' issue.id %}">{{ issue.module }}</a></h2>
-                <p class="article-content">Room : {{ issue.room }}</p>
-                <p class="article-content">Details : {{ issue.details }}</p>
+                <p class="article-content">Course : {{ issue.course }}</p>
+                <p class="article-content">Code : {{ issue.code }}</p>
+                <p class="article-content">Credit : {{ issue.credit }}</p>
+                <p class="article-content">Category : {{ issue.category }}</p>
+                <p class="article-content">Availability : {{ issue.availability }}</p>
+                <p class="article-content">Courses Allowed To Register : {{ issue.courses_allowed_to_register }}</p>
+                <p class="article-content">Description : {{ issue.description }}</p>
             </div>
         </article>
     {% endfor %}
