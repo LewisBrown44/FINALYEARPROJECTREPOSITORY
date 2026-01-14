@@ -1,4 +1,6 @@
 {% extends "itreporting/base.html" %}
+{% load static %}
+
 
 
 {% block content %}
@@ -7,6 +9,7 @@
 <br />
 Welcome to Springfield Universitys IT Department, where innovation meets practical learning. Our IT courses are designed to equip students with the technical knowledge and problem-solving skills needed to succeed in today’s digital world.
 </p>
+
 
 <br />
 Our IT programmes cover a wide range of subjects, including software development, cybersecurity, data analysis, networking, and web technologies. Each course is structured into carefully designed modules that build both foundational knowledge and advanced technical expertise. At Springfield University, we place a strong emphasis on hands-on learning. Through practical labs, real-world projects, and collaborative coursework, students gain valuable experience using industry-standard tools and technologies.</p>
@@ -30,7 +33,30 @@ Our IT programmes cover a wide range of subjects, including software development
           </ul>
         </p>
       </div>
-</div>
+
+      <div class="content-section text-center mt-4">
+        <h4>Live UK Weather</h4>
+        <p id="weather">Loading weather...</p>
+    </div>
+    <script>
+        const apiKey = "4580b5299883c71e316266a372c5310f";
+        const city = "Sheffield";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},UK&units=metric&appid=${apiKey}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.main.temp;
+                const desc = data.weather[0].description;
+                const cityName = data.name;
+    
+                document.getElementById("weather").innerHTML =
+                    `${cityName}: ${temp}°C, ${desc}`;
+            })
+            .catch(error => {
+                document.getElementById("weather").innerHTML =
+                    "Unable to load weather data.";
+            });
+    </script>
 </div>
 </div>
 
